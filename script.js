@@ -18,21 +18,23 @@ $(document).ready(function(){
 								console.log(quote.length);
 								loadData();
 		})
-
+        http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=
+  
 	} */ // OLD FUNCTON
 
     
      function getQuote(){
 
         $.ajax( {
-          url: '/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1',
+          url: 'http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=',
           success: function(data) {
             var oneQuote = data.shift(); // The data is an array of posts. Grab the first one.
               
-            console.log(oneQuote.length, oneQuote.title, oneQuote.content);  
-              
-            $('#quote-title').text(oneQuote.title);
-            $('#quote-content').html(oneQuote.content);
+            console.log(oneQuote.length + '-'+ oneQuote.title +'-'+ oneQuote.content);  
+             
+            $('#quoteMsg').html(oneQuote.content);
+            $('#quoteAuthor').text(oneQuote.title);
+            
 
             // If the Source is available, use it. Otherwise hide it.
             if (typeof oneQuote.custom_meta !== 'undefined' && typeof oneQuote.custom_meta.Source !== 'undefined') {
@@ -46,27 +48,8 @@ $(document).ready(function(){
 
      }
     
-    
-    
-    
-    
-    
-    
-    
-    
-	function getQuote(){
-		$.getJSON("http://quotes.stormconsultancy.co.uk/random.json",
-						 function(json){
-
-								quote = json.quote;
-								author = json.author;
-
-								console.log(quote.length);
-								loadData();
-		})
-
-	}
-
+  
+/*
 	function loadData() {
 		if (quote.length > 130) {
 			getQuote();
@@ -81,7 +64,7 @@ $(document).ready(function(){
 			}
 		}
 	}
-
+*/
 
 	// New quote at every next button click
   $('#nextQuote').on('click', function(event){
