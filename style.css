@@ -59,6 +59,14 @@ table {
 *****   END OF MEYERS RESET CODE *** ****
 
 ************ ********  *****  ***********/
+*,
+*:after,
+*::before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 
 
 body {
@@ -104,7 +112,8 @@ li {
 
 .heading {
 	font-size: 1.2em;
-	color: #7B68EE;
+	color: THISTLE;//#7B68EE;
+    z-index: -100;
 
 }
 
@@ -169,21 +178,61 @@ footer {
 	bottom: 10px;
 	font-size: 1.1em;
 	position: absolute;
+    margin: 5px 25px; 
 }
 
 p {
 	text-decoration: none;
 	margin-left: 6px;
 	margin-bottom: 3px;
+    color: #581845;
 }
 
-.a {
-	color: #E84F89;
-	text-decoration: none !important;
-}
 
-.a:hover {
-	font-size: 1.2em;
-	color: #E84F89;
+a {
+	position: relative;
+	display: block;
+	margin: 15px 25px;
+	outline: none;
+	color: #fff;
 	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 400;
+	text-shadow: 0 0 1px rgba(255,255,255,0.3);
+	font-size: 1.35em;
+}
+
+
+nav a:hover,
+nav a:focus {
+	outline: none;
+}
+
+
+
+
+
+/* Effect 15: scale down, reveal */
+.cl-effect-15 a {
+	color: rgba(0,0,0,0.2);
+	font-weight: 700;
+	text-shadow: none;
+}
+
+.cl-effect-15 a::before {
+	color: #fff;
+	content: attr(data-hover);
+	position: absolute;
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+	-moz-transition: -moz-transform 0.3s, opacity 0.3s;
+	transition: transform 0.3s, opacity 0.3s;
+}
+
+.cl-effect-15 a:hover::before,
+.cl-effect-15 a:focus::before {
+	-webkit-transform: scale(0.9);
+	-moz-transform: scale(0.9);
+	transform: scale(0.9);
+	opacity: 0;
 }
