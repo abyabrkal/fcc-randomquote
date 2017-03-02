@@ -79,9 +79,9 @@ body {
 .card {
 
 	position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-
+    top: 50%;
+    transform: translateY(-50%);
+    overflow: hidden;
 	margin: 0 auto;
 	width: 650px;
 	height: 390px;
@@ -90,10 +90,6 @@ body {
 	box-shadow: 0px 0px 30px 10px rgba(0,0,0,0.25);
 }
 
-.wrap-content{
-	height: 100%;
-
-}
 
 .quote {
 	display: flex;
@@ -106,28 +102,41 @@ body {
 	padding: 10px;
 }
 
-li {
+.card-data {
 	margin: 20px 10px 20px 20px;
+    position: relative;
 }
 
 .heading {
-	font-size: 1.2em;
-	color: THISTLE;//#7B68EE;
-    z-index: -100;
-
+	font-size: 13em;
+	color: #7B68EE;
+    z-index: 6;
+    color: rgba(176, 224, 230, 0.5);
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    top: -50px;
+    right: -130px;
+    position: absolute;
 }
+
+
 
 .message {
 	font-size: 1.75em;
-	color: SLATEBLUE;
+	color: MEDIUMSLATEBLUE;
 	font-family: 'Neuton', serif;
-    line-height: 1.4;
+    line-height: 1.6;
+    z-index: 7;
+    position: relative;
 }
 
 .author {
 	font-size: 1.65em;
 	color: #2AA3EF;
 	font-family: 'Montserrat Subrayada', sans-serif;
+    z-index: 7;
+    position: relative;
 }
 
 
@@ -141,6 +150,7 @@ li {
 	box-shadow: 0px 0px 36px 7px rgba(0,0,0,0.20);
 	color: white;
 	transition-duration: 0.7s;
+    z-index: 8;
 }
 
 button:focus {
@@ -152,6 +162,7 @@ button:focus {
 	top: 10%;
 	background-color: #F95DA1;
     box-shadow: 0px 0px 36px 12px rgba(#E6E6FA,0.40);
+    z-index: 8;
 }
 
 .next:hover {
@@ -165,6 +176,7 @@ button:focus {
 	bottom: 10%;
 	background-color: #2AA3EF;
     box-shadow: 0px 0px 43px 12px rgba(#E6E6FA,0.40);
+    z-index: 8;
 }
 
 
