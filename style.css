@@ -28,6 +28,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+    text-decoration: none;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -64,7 +65,7 @@ body {
 	background: linear-gradient(to bottom right, #FAFAFA,  #9575CD);
 	width: 100%;
 	height: 100vh;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Cinzel', serif;
 }
 
 .card {
@@ -91,7 +92,7 @@ body {
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: flex-start;
-  width: 65%;
+    width: 65%;
 	height: 390px;
 	background-color: transparent;
 	padding: 10px;
@@ -108,15 +109,16 @@ li {
 }
 
 .message {
-	font-size: 2.0em;
-	color: #581845;
-	font-family: 'Merienda One', 'OpenSans', sans-serif;
+	font-size: 1.75em;
+	color: SLATEBLUE;
+	font-family: 'Neuton', serif;
+    line-height: 1.4;
 }
 
 .author {
-	font-size: 1.8em;
-	color: #696969;
-	font-family: 'Great Vibes', cursive;
+	font-size: 1.65em;
+	color: #2AA3EF;
+	font-family: 'Montserrat Subrayada', sans-serif;
 }
 
 
@@ -140,11 +142,12 @@ button:focus {
 	right: 8%;
 	top: 10%;
 	background-color: #F95DA1;
+    box-shadow: 0px 0px 36px 12px rgba(#E6E6FA,0.40);
 }
 
 .next:hover {
 	background-color: white;
-  color: #F95DA1;
+    color: #F95DA1;
 	box-shadow: 0px 0px 36px 12px rgba(#E6E6FA,0.40);
 }
 
@@ -152,6 +155,7 @@ button:focus {
 	right: 8%;
 	bottom: 10%;
 	background-color: #2AA3EF;
+    box-shadow: 0px 0px 43px 12px rgba(#E6E6FA,0.40);
 }
 
 
@@ -168,7 +172,6 @@ footer {
 }
 
 p {
-	font-style: italic;
 	text-decoration: none;
 	margin-left: 6px;
 	margin-bottom: 3px;
