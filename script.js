@@ -12,7 +12,7 @@ $(document).ready(function(){
      function getQuote(){
 
         $.ajax( {
-          url: 'https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=',
+          url: 'https://crossorigin.me/https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=?',  
           type: "GET",
           dataType: "json",
           success: function(data) {
