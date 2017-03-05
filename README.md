@@ -2,7 +2,7 @@
 RandomQuoteGenerator - Free Code Camp FRONTEND Project#3
 
 
-# My Profile
+# My FCC Profile
 https://www.freecodecamp.com/abyabrkal
 
 
