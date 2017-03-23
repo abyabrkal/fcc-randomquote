@@ -6,3 +6,5 @@ RandomQuoteGenerator - Free Code Camp FRONTEND Project#3
 https://www.freecodecamp.com/abyabrkal
 
 
+### STATUS: [COMPLETED]
+
