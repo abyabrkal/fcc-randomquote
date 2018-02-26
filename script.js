@@ -19,14 +19,17 @@ $(document).ready(function(){
           success: function(data) {
 
             // The data is an array of posts. Grab the first one.
-            oneQuote = data.shift(); 
+            var oneQuote = data.shift(); 
             console.log(oneQuote);
             // TESTING 
             //$('#quoteMsg').html(oneQuote.content);
             //$('#quoteAuthor').text(oneQuote.title);
             
-            console.log(oneQuote);
+            console.log("\nCONTENT>>>> GQ - " + oneQuote.content);
+            console.log("\nTITLE>>>> GQ - " + oneQuote.title);
             loadData();
+
+            }
           },
           cache: false,
         });
@@ -59,6 +62,9 @@ $(document).ready(function(){
    
   // Loading Data to respective title and author tags based on 200 character limit
 	function loadData() {
+    console.log("\nCONTENT>>>> LD - " + oneQuote.content);
+    console.log("\nTITLE>>>> LD - " + oneQuote.title);
+
 		if (oneQuote.content.length > 200) {
 			getQuote();
 		} else {
