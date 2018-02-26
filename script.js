@@ -2,17 +2,39 @@ $(document).ready(function(){
 
   var oneQuote = "";
 
-
   // First call to get the quote while initial loading
   getQuote();
-
-
-
     
+  function getQuote(){
+
+        $.ajax( {
+          url: 'http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=',
+          type: "GET",
+          dataType: "jsonp",
+          contentType: false,
+          xhrFields: {
+            withCredentials: false,
+          },
+          crossDomain: true,
+          success: function(data) {
+
+            // The data is an array of posts. Grab the first one.
+            oneQuote = data.shift(); 
+            console.log(oneQuote);
+            // TESTING 
+            //$('#quoteMsg').html(oneQuote.content);
+            //$('#quoteAuthor').text(oneQuote.title);
+            
+            console.log(oneQuote);
+            loadData();
+          },
+          cache: false,
+        });
+        /*************************************************************** 
      function getQuote(){
 
         $.ajax( {
-          url: 'https://crossorigin.me/https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=?',  
+          url: 'https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=',
           type: "GET",
           dataType: "json",
           success: function(data) {
@@ -20,11 +42,7 @@ $(document).ready(function(){
             // The data is an array of posts. Grab the first one.
             oneQuote = data.shift(); 
 
-            /* TESTING 
-            $('#quoteMsg').html(oneQuote.content);
-            $('#quoteAuthor').text(oneQuote.title);
-            */
-            
+          
             loadData();
 
  
@@ -35,9 +53,11 @@ $(document).ready(function(){
           }
         });
 
-     }
+     } */
     
-    // Loading Data to respective title and author tags based on 200 character limit
+  }
+   
+  // Loading Data to respective title and author tags based on 200 character limit
 	function loadData() {
 		if (oneQuote.content.length > 200) {
 			getQuote();
@@ -59,9 +79,7 @@ $(document).ready(function(){
     event.preventDefault();
     
     getQuote();
-    
   });
-  
   
 
   // BUTTON CLICK EVENT: Share quote via TWITTER
@@ -69,8 +87,5 @@ $(document).ready(function(){
     event.preventDefault();
     
     window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent("#dailyquote" + oneQuote.content + ' by ' + oneQuote.title));
-    
   });
-
-
 });
